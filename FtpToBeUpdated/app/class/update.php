@@ -47,7 +47,6 @@ class Update
                         'fileName' => $fileName,
                         'message' => 'Backup file could not be copied!'
                     ];
-                    continue;
                 }
                 else{
                     $log['success'][$count] = [
@@ -79,7 +78,6 @@ class Update
                         'fileName' => $fileName,
                         'message' => 'Backup file could not be updated!'
                     ];
-                    continue;
                 }
                 else{
                     $log['success'][$count]= [
