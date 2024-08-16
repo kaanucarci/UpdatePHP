@@ -1,0 +1,22 @@
+{
+  "FtpsToUpdate": [
+    {
+      "id": 1,
+      "FtpName": "Villa Biz",
+      "Domain": "https://www.villabiz.com.tr/",
+      "Status": 1
+    },
+    {
+      "id": 2,
+      "FtpName": "Villa Reyonu",
+      "Domain": "https://www.villareyonu.com/",
+      "Status": 1
+    },
+    {
+      "id": 3,
+      "FtpName": "Garanti Villam",
+      "Domain": "https://www.garantivillam.com/",
+      "Status": 1
+    }
+  ]
+}
