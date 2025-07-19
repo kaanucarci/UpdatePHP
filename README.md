@@ -1,12 +1,55 @@
-Update PHP, temel anlamda bir versiyon kontrol sistemi olarak geliştirilmiştir. Bu proje, birden fazla web projesine sahip olan ve bu projelerde aynı modülleri kullanan geliştiriciler için tasarlanmıştır.
-Örneğin, 30 adet web projeniz varsa ve bir projede güncelleme yaptığınızda, Update PHP diğer 29 projedeki kaynak kodlarını otomatik olarak günceller.
-Kullanıcı, güncelleme yapılan web sayfasının URL'sini ve güncellenen dosya isimlerini Update PHP'ye sağlar.
-Update PHP, önce güncellenen kodları alır, ardından güncellenmemiş olan projelerin yedeklerini alarak yeni kodlarla günceller. 
-Bu sayede, tüm projelerde tutarlılık sağlanır ve manuel güncellemelerden kaynaklanan hatalar önlenir.
-Böyle bir projem var ve bütün proje 3 klasörden oluşuyor: UpdatePHP, UpdatedFTP, FtpToBeUpdated.
+# Update PHP
 
-UpdatePHP: Bütün sistemin çalıştığı katman, güncellediğiniz FTP'nin URL'sini ve güncelleme yaptığınız dosya isimlerini girdiğiniz kısım.
+**Update PHP** is a basic version control and auto-update system designed for developers who manage multiple web projects that share common modules. With this system, consistency is ensured across all projects, and manual update errors are prevented.
 
-UpdatedFTP: Güncel olan kodların alınacağı katman, sistemin doğru çalışması için örnek URL; www.example.com/.
+## 📁 Project Structure
 
-FtpToBeUpdated: Güncellenmesini istediğiniz FTP'lerin ana dizininde olması gerekiyor.
+The system is built on three main folders:
+
+### 1. `UpdatePHP`
+This is the core of the system. You enter:
+- The URL of the project where the update was made
+- The filenames of the updated files
+
+### 2. `UpdatedFTP`
+This folder serves as the source for updated code.  
+The system fetches files from here.  
+**Example URL:** `https://www.example.com/`
+
+### 3. `FtpToBeUpdated`
+This folder should exist in the root directory of each FTP-based project that needs to be updated.
+
+---
+
+## 🔁 How It Works
+
+1. The user inputs the URL of the updated project and the list of updated file names via the `UpdatePHP` interface.
+2. The system pulls the updated files from the `UpdatedFTP` project.
+3. Then it:
+   - Takes backups of all projects inside the `FtpToBeUpdated` folder.
+   - Replaces the old files with the new ones.
+
+---
+
+## ✅ Benefits
+
+- Automatically updates multiple web projects with minimal effort.
+- Prevents human error caused by manual updates.
+- Saves time and ensures consistency across projects.
+
+---
+
+## 📌 Use Case Example
+
+If you have **30 different web projects**, and you make a change in 1 of them, Update PHP allows you to automatically apply those changes to the other 29 projects.
+
+---
+
+## ⚠️ Notes
+
+- Make sure the FTP structure and file permissions are correctly set.
+- Always test the update process on a few projects before applying to all.
+
+---
+
+Happy coding! 🚀
